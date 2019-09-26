@@ -2,6 +2,8 @@
 This is a list of functions that should be completed.
 """
 
+import string
+
 from typing import Any
 from typing import List
 
@@ -15,10 +17,7 @@ def is_two_object_has_same_value(first: Any, second: Any) -> bool:
     If @first and @second has same value should return True
     In another case should return False
     """
-    if first == second:
-        return True
-    else:
-        return False
+    return first == second
 
 
 def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
@@ -26,10 +25,7 @@ def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    if type(first) == type(second):
-        return True
-    else:
-        return False
+    return type(first) == type(second)
 
 
 def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
@@ -37,10 +33,7 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    if id(first) == id(second):
-        return True
-    else:
-        return False
+    return id(first) == id(second)
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -112,10 +105,7 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> False
 
     """
-    if word in text:
-        return True
-    else:
-        return False
+    return word in text
 
 
 def some_loop_exercise() -> list:
@@ -157,10 +147,9 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    abc = ('abcdefghijklmnopqrstuvwxyz')
     alph = {}
     j = 1
-    for i in abc:
+    for i in string.ascii_lowercase:
         alph[j] = i
         j += 1
     return alph
