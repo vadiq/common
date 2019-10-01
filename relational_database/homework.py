@@ -62,7 +62,7 @@ def task_4_update_customer(con):
     """
     Update first customer's name (Set customername equal to  'Johnny Depp')
     Args:
-        con: psycopg cursor
+        con: psycopg connection object
 
     Returns: 91 records with updated customer
 
