@@ -62,7 +62,7 @@ def task_4_update_customer(con):
     """
     Update first customer's name (Set customername equal to  'Johnny Depp')
     Args:
-        con: psycopg cursor
+        con: psycopg connection
 
     Returns: 91 records with updated customer
 
@@ -149,7 +149,8 @@ def task_8_count_customers_by_city(cur):
 
 def task_9_count_customers_by_country_with_than_10_customers(cur):
     """
-    List the number of customers in each country. Only include countries with more than 10 customers.
+    List the number of customers in each country.
+    Only include countries with more than 10 customers.
 
     Args:
         cur: psycopg cursor
@@ -206,7 +207,7 @@ def task_12_list_suppliers_from_specified_countries(cur):
     Returns: 8 records
     """
     cur.execute("""
-        SELECT *
+        SELECT SupplierID, SupplierName, ContactName, City, Country
         FROM Suppliers 
         WHERE Country IN ('USA', 'UK', 'Japan')
         """)
