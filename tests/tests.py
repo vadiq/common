@@ -13,7 +13,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(self.rect1.get_rectangle_square(), 12)
 
     def test_get_sum_of_corners_result(self):
-        for i in [1, 2, 3, 4]:
+        for i in range(1,5):
             self.assertEqual(self.rect1.get_sum_of_corners(i), i * 90)
 
     def test_get_sum_of_corners_raises(self):
