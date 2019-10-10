@@ -68,7 +68,7 @@ class Rectangle:
         :return:
         """
         if self.width != self.height:
-            raise ValueError("Can't inscribe circle in rectangle with given width and height")
+            raise ValueError("Can't inscribed circle in rectangle with such width and height")
         diagonal = self.get_rectangle_diagonal()
         radius = diagonal / (2 * math.sqrt(2))
         return radius
