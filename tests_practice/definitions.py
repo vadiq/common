@@ -1,7 +1,7 @@
 from string import ascii_lowercase
 
 
-def task1(a, b):
+def task1_common_elements(a, b):
     """
     Take two lists, say for example these two:
     a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
@@ -19,7 +19,7 @@ def task1(a, b):
         return c
 
 
-def task2(s):
+def task2_letter_times(s):
     """
     Return the number of times that the letter “a” appears anywhere in the given string
     Given string is “I am a good developer. I am also a writer” and output should be 5.
@@ -32,7 +32,7 @@ def task2(s):
     return count
 
 
-def task3(num):
+def task3_is_power(num):
     """
     Write a Python program to check if a given positive integer is a power of three
     Input : 9
@@ -41,10 +41,10 @@ def task3(num):
     power = 3
     while num > power:
         num /= power
-    return num == 3
+    return num == power
 
 
-def task4(num):
+def task4_add_repeatedly(num):
     """
     Write a Python program to add the digits of a positive integer
     repeatedly until the result has a single digit.
@@ -59,7 +59,7 @@ def task4(num):
     return num
 
 
-def task5(a):
+def task5_push_zeros(a):
     """
     Write a Python program to push all zeros to the end of a list.
     Input : [0, 2, 3, 4, 6, 7, 10]
@@ -72,7 +72,7 @@ def task5(a):
     return a
 
 
-def task6(a):
+def task6_arithmetic_progression_check(a):
     """
     Write a Python program to check a sequence of numbers is an
     arithmetic progression or not.
@@ -89,7 +89,7 @@ def task6(a):
     return sum(a) == arithmetic_sequence_sum
 
 
-def task7(a):
+def task7_unique_number(a):
     """
     Write a Python program to find the number in a list that doesn't occur twice.
     Input : [5, 3, 4, 3, 4]
@@ -117,7 +117,7 @@ def task7(a):
             return b
 
 
-def task8(a):
+def task8_missing_number(a):
     """
     Write a Python program to find a missing number from a list.
     Input : [1,2,3,4,6,7,8]
@@ -133,7 +133,7 @@ def task8(a):
         return result
 
 
-def task9(a):
+def task9_find_before_tuple(a):
     """
     Write a Python program to count the elements in a list until an element is a tuple.
     Sample Test Cases:
@@ -145,7 +145,7 @@ def task9(a):
             return a[a.index(i) - 1]
 
 
-def task10(a):
+def task10_string_reversed(a):
     """
     Write a program that will take the str parameter being passed and
     return the string in reversed order.
@@ -160,7 +160,7 @@ def task10(a):
     return a[::-1]
 
 
-def task11(num):
+def task11_time_converter(num):
     """
     Write a program that will take the num parameter being passed and
     return the number of hours and minutes the parameter converts to
@@ -175,7 +175,7 @@ def task11(num):
     return result
 
 
-def task12(text):
+def task12_largest_word(text):
     """
     Write a program that will take the parameter being passed and
     return the largest word in the string. If there are two or more
@@ -196,7 +196,7 @@ def task12(text):
     raise ValueError
 
 
-def task13(text):
+def task13_words_backward(text):
     """
     Write a program (using functions!) that asks the user for
     a long string containing multiple words.
@@ -215,7 +215,7 @@ def task13(text):
     raise ValueError
 
 
-def task14():
+def task14_fibonacci():
     """
     Write a program that asks the user how many Fibonacci numbers to generate and then generates them.
     Take this opportunity to think about how you can use functions.
@@ -224,7 +224,7 @@ def task14():
     the next number in the sequence is the sum of the previous two numbers in the sequence.
     The sequence looks like this: 1, 1, 2, 3, 5, 8, 13, …)
     """
-    num = int(input('Enter item counts for Fibonacci numbers'))
+    num = int(input('Enter item counts for Fibonacci numbers\n'))
     if num == 1:
         return [1]
     elif num > 1:
@@ -237,7 +237,7 @@ def task14():
         return lst
 
 
-def task15(a):
+def task15_even_only(a):
     """
     Let’s say I give you a list saved in a variable:
     a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
@@ -254,19 +254,19 @@ def task15(a):
     raise ValueError
 
 
-def task16():
+def task16_sum_up_until():
     """
     Write a program that will add up all the numbers from 1 to input number.
     For example: if the input is 4 then your program should return 10 because 1 + 2 + 3 + 4 = 10.
     """
-    num = int(input('Enter item counts for Fibonacci numbers'))
+    num = int(input('Enter how many numbers to sum up\n'))
     result = 0
     for i in range(num + 1):
         result += i
     return result
 
 
-def task17(num):
+def task17_factorial(num):
     """
     Write a program that will take the parameter being passed and return the factorial of it.
     For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24.
@@ -279,7 +279,7 @@ def task17(num):
     raise ValueError
 
 
-def task18(text):
+def task18_letter_replacement(text):
     """
     Write a program that will take the str parameter being passed and
     modify it using the following algorithm.
@@ -303,7 +303,7 @@ def task18(text):
     raise ValueError
 
 
-def task19(text):
+def task19_alpha_order(text):
     """
     Write a program that will take the str string parameter
     being passed and return the string with the letters in alphabetical order
@@ -318,7 +318,7 @@ def task19(text):
     raise ValueError
 
 
-def task20(a, b):
+def task20_num2_check(a, b):
     """
     Write a program that will take both parameters being passed and
     return the true if num2 is greater than num1, otherwise return the false.
