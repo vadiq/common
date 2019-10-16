@@ -41,7 +41,7 @@ def task3(num):
     power = 3
     while num > power:
         num /= power
-    return num
+    return num == 3
 
 
 def task4(num):

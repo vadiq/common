@@ -47,11 +47,11 @@ class TestCases(unittest.TestCase):
         a = [9, 27, 3]
         for i in a:
             with self.subTest(i=i):
-                self.assertEqual(task3(i), 3)
+                self.assertTrue(task3(i))
         a = [6, 7, 15, 0]
         for j in a:
             with self.subTest(j=j):
-                self.assertNotEqual(task3(j), 3)
+                self.assertFalse(task3(j))
 
     def test_task4(self):
         lst = [
