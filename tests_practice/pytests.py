@@ -50,18 +50,23 @@ def test_task13_words_backward_raises():
         task13_words_backward(59)
 
 
-@pytest.mark.parametrize("give_input, result",
+@pytest.mark.parametrize("test_input, result",
                          [(7, [1, 1, 2, 3, 5, 8, 13]),
                           (10, [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]),
                           (2, [1, 1]),
                           (1, [1])])
-def test_task14_fibonacci(give_input, result):
-    with patch('builtins.input', return_value=give_input):
+def test_task14_fibonacci(test_input, result):
+    with patch('builtins.input', return_value=test_input):
         assert task14_fibonacci() == result
 
 
-def test_task14_fibonacci_raises():
-    with patch('builtins.input', return_value='give_input'):
+@pytest.mark.parametrize("test_input",
+                         ['7',
+                          True,
+                          5.5,
+                          -5])
+def test_task14_fibonacci_raises(test_input):
+    with patch('builtins.input', return_value=test_input):
         with pytest.raises(ValueError):
             task14_fibonacci()
 
@@ -80,16 +85,16 @@ def test_task15_even_only_raises(check):
         task15_even_only(check)
 
 
-@pytest.mark.parametrize("give_input, result",
+@pytest.mark.parametrize("test_input, result",
                          [(4, 10),
                           (2, 3)])
-def test_task16_sum_up_until(give_input, result):
-    with patch('builtins.input', return_value=give_input):
+def test_task16_sum_up_until(test_input, result):
+    with patch('builtins.input', return_value=test_input):
         assert task16_sum_up_until() == result
 
 
 def test_task16_sum_up_until_raises():
-    with patch('builtins.input', return_value='give_input'):
+    with patch('builtins.input', return_value='some text'):
         with pytest.raises(ValueError):
             task16_sum_up_until()
 
@@ -104,7 +109,7 @@ def test_task17_factorial(check, result):
 @pytest.mark.parametrize("check",
                          ['59', [], 's'])
 def test_task17_factorial_raises(check):
-    with pytest.raises(ValueError):
+    with pytest.raises(TypeError):
         task17_factorial(check)
 
 

@@ -27,7 +27,7 @@ class TestCases(unittest.TestCase):
         check_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
         result = [1, 2, 3, 5, 8, 13]
         for elem in input_list:
-            with self.subTest(elem=elem):
+            with self.subTest(i=elem):
                 self.assertEqual(task1_common_elements(elem, check_list),
                                  result)
 
@@ -39,7 +39,7 @@ class TestCases(unittest.TestCase):
         check_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
         result = []
         for elem in input_list:
-            with self.subTest(elem=elem):
+            with self.subTest(i=elem):
                 self.assertEqual(task1_common_elements(elem, check_list),
                                  result)
 
@@ -56,13 +56,13 @@ class TestCases(unittest.TestCase):
     def test_task3_is_power_true(self):
         numbers = [9, 27, 3]
         for elem in numbers:
-            with self.subTest(elem=elem):
+            with self.subTest(i=elem):
                 self.assertTrue(task3_is_power(elem))
 
     def test_task3_is_power_false(self):
         numbers = [6, 7, 15, 0]
         for elem in numbers:
-            with self.subTest(elem=elem):
+            with self.subTest(i=elem):
                 self.assertFalse(task3_is_power(elem))
 
     def test_task4_add_repeatedly(self):
@@ -72,7 +72,7 @@ class TestCases(unittest.TestCase):
             (5, 5)
         ]
         for number, result in lst:
-            with self.subTest(number=number):
+            with self.subTest(i=number):
                 self.assertEqual(task4_add_repeatedly(number), result)
 
     def test_task5_push_zeros(self):
@@ -81,7 +81,7 @@ class TestCases(unittest.TestCase):
             ([0, 2, 0, 4, 0, 0, 10], [2, 4, 10, 0, 0, 0, 0])
         ]
         for check, result in lst:
-            with self.subTest(check=check):
+            with self.subTest(i=check):
                 self.assertEqual(task5_push_zeros(check), result)
 
     def test_task6_arithmetic_progression_check(self):
@@ -91,10 +91,10 @@ class TestCases(unittest.TestCase):
             [5.5, 11, 16.5, 22],
         ]
         for elem in inputs:
-            with self.subTest(elem=elem):
+            with self.subTest(i=elem):
                 self.assertTrue(task6_arithmetic_progression_check(elem))
         input1 = [5, 10, 15, 20, 20]
-        with self.subTest(input1=input1):
+        with self.subTest(i=input1):
             self.assertFalse(task6_arithmetic_progression_check(input1))
 
     def test_task7_unique_number(self):
@@ -105,7 +105,7 @@ class TestCases(unittest.TestCase):
             ([5, 3, 5, 3, 4, 4], [])
         ]
         for check, result in lst:
-            with self.subTest(check=check):
+            with self.subTest(i=check):
                 self.assertEqual(task7_unique_number(check), result)
 
     def test_task8_missing_number(self):
@@ -115,7 +115,7 @@ class TestCases(unittest.TestCase):
             ([1, 2, 3, 4, 5, 6, 7, 8], [])
         ]
         for check, result in lst:
-            with self.subTest(check=check):
+            with self.subTest(i=check):
                 self.assertEqual(task8_missing_number(check), result)
 
     def test_task9_find_before_tuple(self):
@@ -127,7 +127,7 @@ class TestCases(unittest.TestCase):
             []
         ]
         for elem in list_a:
-            with self.subTest(elem=elem):
+            with self.subTest(i=elem):
                 self.assertEqual(task9_find_before_tuple(list_a), 0)
 
     def test_task10_string_reversed(self):
@@ -136,7 +136,7 @@ class TestCases(unittest.TestCase):
             ("Hello World", 'dlroW olleH')
         ]
         for check, result in lst:
-            with self.subTest(check=check):
+            with self.subTest(i=check):
                 self.assertEqual(task10_string_reversed(check), result)
 
 

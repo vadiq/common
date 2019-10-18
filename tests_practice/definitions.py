@@ -9,14 +9,11 @@ def task1_common_elements(list1, list2):
     and write a program that returns a list that contains only
     the elements that are common between the lists (without duplicates).
     """
-    try:
-        result_list = []
-        for elem in set(list1):
-            if elem in set(list2):
-                result_list.append(elem)
-        return result_list
-    except TypeError:
-        raise TypeError
+    result_list = []
+    for elem in set(list1):
+        if elem in set(list2):
+            result_list.append(elem)
+    return result_list
 
 
 def task2_letter_times(text):
@@ -155,8 +152,7 @@ def task11_time_converter(num):
         raise ValueError
     hour = num // 60
     minute = num % 60
-    result = str(hour) + ':' + str(minute)
-    return result
+    return f'{str(hour)}:{str(minute)}'
 
 
 def task12_largest_word(text):
@@ -171,7 +167,7 @@ def task12_largest_word(text):
     Input:"I love dogs"
     Output:love
     """
-    if isinstance(text, str) and text:  # check if type is string and not empty
+    if text and isinstance(text, str):
         max_word = max([''.join(char for char in word if char.isalpha())
                         for word in text.split(' ')], key=len)
         return max_word
@@ -187,7 +183,7 @@ def task13_words_backward(text):
     Input: My name is Michele
     Output: Michele is name My
     """
-    if isinstance(text, str) and text:
+    if text and isinstance(text, str):
         text = text.split(' ')
         text.reverse()
         text = ' '.join(text)
@@ -204,16 +200,21 @@ def task14_fibonacci():
     the next number in the sequence is the sum of the previous two numbers in the sequence.
     The sequence looks like this: 1, 1, 2, 3, 5, 8, 13, …)
     """
-    num = int(input('Enter item counts for Fibonacci numbers\n'))
-    if num == 1:
-        return [1]
-    lst = [1, 1]
-    i = 1
-    while i < (num - 1):
-        j = lst[i] + lst[i - 1]
-        lst.append(j)
-        i += 1
-    return lst
+    try:
+        num = int(input('Enter item counts for Fibonacci numbers\n'))
+        if num == 1:
+            return [1]
+        elif num < 0:
+            raise ValueError
+        lst = [1, 1]
+        i = 1
+        while i < (num - 1):
+            j = lst[i] + lst[i - 1]
+            lst.append(j)
+            i += 1
+        return lst
+    except ValueError:
+        raise ValueError
 
 
 def task15_even_only(lst):
@@ -223,7 +224,7 @@ def task15_even_only(lst):
     Write one line of Python that takes this list a and makes
     a new list that has only the even elements of this list in it.
     """
-    if isinstance(lst, list) and lst:  # check if list and is not empty
+    if lst and isinstance(lst, list):
         return [elem for elem in lst if elem % 2 == 0]
     raise ValueError
 
@@ -245,12 +246,10 @@ def task17_factorial(num):
     Write a program that will take the parameter being passed and return the factorial of it.
     For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24.
     """
-    if isinstance(num, int):
-        result = 1
-        for i in range(1, num + 1):
-            result *= i
-        return result
-    raise ValueError
+    result = 1
+    for i in range(1, num + 1):
+        result *= i
+    return result
 
 
 def task18_letter_replacement(text):
@@ -264,7 +263,7 @@ def task18_letter_replacement(text):
     Input: abcd
     Output: bcdE
     """
-    if isinstance(text, str) and text:  # check if text is string and not empty
+    if text and isinstance(text, str):
         new_text = []
         for char in text:
             new_char_index = ascii_lowercase.index(char) + 1
@@ -285,7 +284,7 @@ def task19_alpha_order(text):
     Input: edcba
     Output: abcde
     """
-    if isinstance(text, str) and text:  # check if text is string
+    if text and isinstance(text, str):
         return ''.join(sorted(text))
     raise ValueError
 
