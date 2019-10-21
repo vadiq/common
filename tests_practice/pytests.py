@@ -56,19 +56,7 @@ def test_task13_words_backward_raises():
                           (2, [1, 1]),
                           (1, [1])])
 def test_task14_fibonacci(test_input, result):
-    with patch('builtins.input', return_value=test_input):
-        assert task14_fibonacci() == result
-
-
-@pytest.mark.parametrize("test_input",
-                         ['7',
-                          True,
-                          5.5,
-                          -5])
-def test_task14_fibonacci_raises(test_input):
-    with patch('builtins.input', return_value=test_input):
-        with pytest.raises(ValueError):
-            task14_fibonacci()
+    assert task14_fibonacci(test_input) == result
 
 
 @pytest.mark.parametrize("check, result",

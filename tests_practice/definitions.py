@@ -191,7 +191,7 @@ def task13_words_backward(text):
     raise ValueError
 
 
-def task14_fibonacci():
+def task14_fibonacci(num):
     """
     Write a program that asks the user how many Fibonacci numbers to generate and then generates them.
     Take this opportunity to think about how you can use functions.
@@ -200,21 +200,15 @@ def task14_fibonacci():
     the next number in the sequence is the sum of the previous two numbers in the sequence.
     The sequence looks like this: 1, 1, 2, 3, 5, 8, 13, …)
     """
-    try:
-        num = int(input('Enter item counts for Fibonacci numbers\n'))
-        if num == 1:
-            return [1]
-        elif num < 0:
-            raise ValueError
-        lst = [1, 1]
-        i = 1
-        while i < (num - 1):
-            j = lst[i] + lst[i - 1]
-            lst.append(j)
-            i += 1
-        return lst
-    except ValueError:
-        raise ValueError
+    if num == 1:
+        return [1]
+    lst = [1, 1]
+    i = 1
+    while i < (num - 1):
+        j = lst[i] + lst[i - 1]
+        lst.append(j)
+        i += 1
+    return lst
 
 
 def task15_even_only(lst):
