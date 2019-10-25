@@ -85,7 +85,6 @@ def task6_arithmetic_progression_check(list_input):
     for i in range(2, len(list_input)):
         if difference != list_input[i] - list_input[i - 1]:
             return False
-        i += 1
     return True
 
 
@@ -152,7 +151,7 @@ def task11_time_converter(num):
         raise ValueError
     hour = num // 60
     minute = num % 60
-    return f'{str(hour)}:{str(minute)}'
+    return f'{hour}:{minute}'
 
 
 def task12_largest_word(text):
@@ -171,7 +170,8 @@ def task12_largest_word(text):
         max_word = max([''.join(char for char in word if char.isalpha())
                         for word in text.split(' ')], key=len)
         return max_word
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def task13_words_backward(text):
@@ -188,7 +188,8 @@ def task13_words_backward(text):
         text.reverse()
         text = ' '.join(text)
         return text
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def task14_fibonacci(num):
@@ -220,7 +221,8 @@ def task15_even_only(lst):
     """
     if lst and isinstance(lst, list):
         return [elem for elem in lst if elem % 2 == 0]
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def task16_sum_up_until():
@@ -266,7 +268,8 @@ def task18_letter_replacement(text):
                 new_char = new_char.upper()
             new_text.append(new_char)
         return ''.join(new_text)
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def task19_alpha_order(text):
@@ -280,7 +283,8 @@ def task19_alpha_order(text):
     """
     if text and isinstance(text, str):
         return ''.join(sorted(text))
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def task20_num2_check(param1, param2):
@@ -293,4 +297,5 @@ def task20_num2_check(param1, param2):
         if param1 == param2:
             return '-1'
         return param1 < param2
-    raise ValueError
+    else:
+        raise ValueError
