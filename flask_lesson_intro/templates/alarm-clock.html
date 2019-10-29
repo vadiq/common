@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>{{ title.upper() }}</h1>
+<div>
+    <div>
+        <p><img src="{{url_for('static', filename='clock.jpg')}}" width="40%"></p>
+    </div>
+    <div>
+        {% for element in data %}
+            {% if element.title == title %}
+                {{ element.get('text') }}
+                <p><i><h5>Words count: {{ element.get('text').split(' ')|length }}</h5></i></p>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
