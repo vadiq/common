@@ -3,7 +3,7 @@
 <div><ul>
     {% for vegetable in vegetables_list %}
         <li>{% if vegetable=='beetroot' %}
-            <font style="text-transform: uppercase">{{ vegetable }}</font>
+            {{ vegetable.upper() }}
         {% else %}
             {{ vegetable }}
         {% endif %}
