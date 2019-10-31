@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% if title %}
-    <title>Site test - {{ title }}</title>
+    {% if item %}
+    <title>{{ item }} - Site test</title>
     {% else %}
     <title>Site test</title>
     {% endif %}
@@ -26,6 +26,7 @@
         }
       }
 
+
     </style>
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.3/examples/cover/cover.css" rel="stylesheet">
@@ -37,8 +38,8 @@
             <h3 class="masthead-brand">Flask Homework #2</h3>
             <nav class="nav nav-masthead justify-content-center">
                 <a class="nav-link active" href="/">Home</a>
-<!--                    <a class="nav-link" href="#">Features</a>-->
-<!--                    <a class="nav-link" href="#">Contact</a>-->
+                <!--                    <a class="nav-link" href="#">Features</a>-->
+                <!--                    <a class="nav-link" href="#">Contact</a>-->
             </nav>
         </div>
     </header>
