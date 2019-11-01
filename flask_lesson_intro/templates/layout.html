@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if item %}
+    <title>{{ item }} - Site test</title>
+    {% else %}
+    <title>Site test</title>
+    {% endif %}
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.3/examples/cover/cover.css" rel="stylesheet">
+</head>
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h3 class="masthead-brand">Flask Homework #2</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="/">Home</a>
+                <!--                    <a class="nav-link" href="#">Features</a>-->
+                <!--                    <a class="nav-link" href="#">Contact</a>-->
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover">
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <div>Flask Homework #2 for <a href="https://cursor.education/uk">CURSOR / Python "Black Canary" Group</a>,
+            </div>
+            <div>by <a href="/author">Vadim Savchuk</a>.</div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

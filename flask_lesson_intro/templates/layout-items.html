@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>{{ item.upper() }}</h1>
+    <div>
+        <div>
+            <p><img width="40%" src="{{url_for('static', filename=item + '.png')}}"></p>
+        </div>
+        <div>
+            {{ data }}
+            <h5><i>Words count: {{ data|wordcount }}</i></h5>
+        </div>
+    </div>
+{% endblock content %}
