@@ -1,19 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<h1>{{ item.upper() }}</h1>
-<div>
+    <h1>{{ item.upper() }}</h1>
     <div>
-        <p><img width="40%" src="{{url_for('static', filename=item + '.png')}}"></p>
+        <div>
+            <p><img width="40%" src="{{url_for('static', filename=item + '.png')}}"></p>
+        </div>
+        <div>
+            {{ data }}
+            <h5><i>Words count: {{ data|wordcount }}</i></h5>
+        </div>
     </div>
-    <div>
-        {% for element in data %}
-        {% if element.title == item %}
-        {{ element.get('text') }}
-        <h5><i>Words count: {{ element.get('text')|wordcount }}</i></h5>
-        {% endif %}
-        {% endfor %}
-    </div>
-</div>
-
 {% endblock content %}

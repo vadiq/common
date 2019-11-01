@@ -13,7 +13,10 @@ def get_home_page():
 
 @app.route('/<item>')
 def get_item_page(item):
-    return render_template("layout-items.html", item=item, data=get_data())
+    for element in get_data():
+        if element.get('title') == item:
+            description = element.get('text')
+            return render_template("layout-items.html", item=item, data=description)
 
 
 @app.route('/author')
