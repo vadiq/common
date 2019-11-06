@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <!--    <link href="https://getbootstrap.com/docs/4.3/examples/cover/cover.css" rel="stylesheet">-->
+    <link href="https://getbootstrap.com/docs/4.3/examples/album/album.css" rel="stylesheet">
+</head>
+<body>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="max-width:42em">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <nav class="nav nav-masthead" style="float:left">
+                    <a class="nav-link active" href="{{ url_for('get_page_home') }}">Home</a>
+                </nav>
+                <h4 class="masthead-brand" style="float:right">Flask homework #3</h4>
+            </div>
+        </header>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+</html>

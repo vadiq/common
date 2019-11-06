@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">{{ item.name.capitalize() }}</h1>
+        <p class="lead text">{{ item.description }}</p>
+        <p class="lead text-muted">Price: {{ item.price }}</p>
+        <p>
+            <img src="{{ url_for('products.static', filename=item.img_name) }}" width="80%">
+        </p>
+        <p>
+            <a href="{{ url_for('products.get_page_all_products') }}" class="btn btn-primary my-2">SEE ALL PRODUCTS</a>
+        </p>
+    </div>
+</section>
+{% endblock content %}

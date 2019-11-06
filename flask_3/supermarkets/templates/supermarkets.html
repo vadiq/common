@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Supermarkets</h1>
+        <p>
+            <a href="{{ url_for('supermarkets.get_page_add_supermarket') }}" class="btn btn-primary my-2">ADD</a>
+        </p>
+        {% if not supermarkets_list %}
+            <p class="lead text-muted">There's no supermarkets to show yet.</p>
+        {% else %}
+            <ol type="1" style="float:left">
+                {% for item in supermarkets_list %}
+                    <li>
+                        {% if session[item.id] == 'clicked' %}
+                            <a style="pointer-events: none; opacity: 0.5;" href="">{{ item.name }}</a>
+                        {% else %}
+                            <a href="{{ url_for('supermarkets.get_page_supermarket', item_id=item.id) }}">
+                                {{ item.name }}</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    </div>
+</section>
+{% endblock content %}
