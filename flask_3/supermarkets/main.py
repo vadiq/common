@@ -3,7 +3,7 @@ from os import getcwd
 
 from flask import Blueprint, render_template, flash, redirect, request, session
 
-from .forms import AddSupermarketForm
+from flask_3.supermarkets.forms import AddSupermarketForm
 
 supermarket = Blueprint('supermarkets', __name__, template_folder='templates', static_folder='static',
                         static_url_path='/supermarkets/static')
@@ -54,5 +54,4 @@ def upload_image():
         image = request.files['supermarket_image']
         image.save(f'{getcwd()}/supermarkets/static/{image.filename}')
         return image.filename
-    else:
-        return 'no-photo.png'
+    return 'no-photo.png'

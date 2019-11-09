@@ -3,7 +3,7 @@ from os import getcwd
 
 from flask import Blueprint, render_template, flash, redirect, request, session
 
-from .forms import AddProductForm
+from flask_3.products.forms import AddProductForm
 
 product = Blueprint('products', __name__, template_folder='templates', static_folder='static',
                     static_url_path='/products/static')
@@ -55,5 +55,4 @@ def upload_image():
         image = request.files['product_image']
         image.save(f'{getcwd()}/products/static/{image.filename}')
         return image.filename
-    else:
-        return 'no-photo.png'
+    return 'no-photo.png'
