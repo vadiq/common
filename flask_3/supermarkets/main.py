@@ -22,12 +22,11 @@ def get_page_supermarket(item_id):
 
 @supermarket.route('/supermarkets')
 def get_page_all_supermarkets():
+    supermarkets_filter = []
     if request.args:
-        supermarkets_filter = []
-        for item in supermarkets_list:
-            for key, value in request.args.items():
-                if item[key] == value:
-                    supermarkets_filter.append(item)
+        for key, value in request.args.items():
+            if value:
+                supermarkets_filter = [item for item in supermarkets_list if item[key] == value]
     else:
         supermarkets_filter = supermarkets_list
     return render_template('supermarkets.html', supermarkets_list=supermarkets_filter)

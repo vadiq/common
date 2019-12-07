@@ -22,12 +22,11 @@ def get_page_product(item_id):
 
 @product.route('/products')
 def get_page_all_products():
+    products_filter = []
     if request.args:
-        products_filter = []
-        for item in products_list:
-            for key, value in request.args.items():
-                if item[key] == value:
-                    products_filter.append(item)
+        for key, value in request.args.items():
+            if value:
+                products_filter = [item for item in products_list if item[key] == value]
     else:
         products_filter = products_list
     return render_template('products.html', products_list=products_filter)
