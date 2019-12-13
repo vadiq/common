@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
-from flask_3.products.main import product
-from flask_3.supermarkets.main import supermarket
+from products.main import product
+from supermarkets.main import supermarket
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'very secret password'

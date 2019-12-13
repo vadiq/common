@@ -3,7 +3,7 @@ from os import getcwd
 
 from flask import Blueprint, render_template, flash, redirect, request, session
 
-from flask_3.products.forms import AddProductForm
+from products.forms import AddProductForm
 
 product = Blueprint('products', __name__, template_folder='templates', static_folder='static',
                     static_url_path='/products/static')

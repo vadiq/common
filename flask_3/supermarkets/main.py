@@ -3,7 +3,7 @@ from os import getcwd
 
 from flask import Blueprint, render_template, flash, redirect, request, session
 
-from flask_3.supermarkets.forms import AddSupermarketForm
+from supermarkets.forms import AddSupermarketForm
 
 supermarket = Blueprint('supermarkets', __name__, template_folder='templates', static_folder='static',
                         static_url_path='/supermarkets/static')
